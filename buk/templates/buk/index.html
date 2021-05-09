@@ -1,11 +1,15 @@
 {% extends 'map/base.html' %}
 {% block content %}
+
+
 <div id = "map">
+        
     <!--map coordinate-->
     <div class="leaflet-control map-coordinate">
         <div class="coordinate">
-
-
+                {{ rd|json_script:"road" }}
+                {{ plc|json_script:"places" }}
+                {{ bound|json_script:"boundary" }}
         </div>
 
     </div>
@@ -20,13 +24,15 @@
 
 </div>
 
+
+
 <!-- function was created -->
 
 {% for place in places %}
 <div class="card">
 <div class="card-body">
-<h5 class="card-title"><a href="{% url 'detail' place.slug %}">{{places.name }}</a></h5>
-<p class="card-text">{{ places.geom}}</p>
+<h5 class="card-title"><a href="{% url 'detail' place.slug %}">{{place.name }}</a></h5>
+<p class="card-text">{{ place.geom}}</p>
 <a href="#" class="card-link">{{ place.source }}</a>
 <a href="adminbuk/places/{{ places.id }}/change/" class="card-link">Edit</a>
 <a href="adminbuk/places/{{ places.id }}/delete/" class="card-link">Delete</a>

@@ -70,7 +70,9 @@ ROOT_URLCONF = 'hard.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'buk', 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -140,11 +142,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_URL = '/media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+"""
 LEAFLET_CONFIG = {
     # conf here
     'SPATIAL_EXTENT': (5.0, 44.0, 7.5, 46),
@@ -156,3 +166,4 @@ LEAFLET_CONFIG = {
     'SCALE': 'both',
     'TILES': 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 }
+"""

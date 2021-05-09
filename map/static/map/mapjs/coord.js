@@ -4,6 +4,7 @@ var map = L.map('map', {
     //fullscreenControl: true,
 }).setView([11.970148, 8.433266], 15);
 //setting the zoom control position
+
 map.zoomControl.setPosition('topleft');
 
 map.on('fullscreenchange', function () {
@@ -46,6 +47,7 @@ marker.bindPopup("<b>Bayero University Kano</b>").openPopup();
 //adding marker to the map
 var marker = L.marker([11.970148, 8.433266]).addTo(map);
 marker.bindPopup("<b>Mosque</b>").openPopup();
+
 
 //adding temporary popup to map
 var popup = L.popup()
