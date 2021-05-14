@@ -37,7 +37,13 @@ L.Routing.control({
     ],
     //router: L.Routing.graphHopper('8b49699c-f011-4a5b-9d4f-e165edead5df'),
     router: L.Routing.mapbox('pk.eyJ1IjoibG9rYWNoaW1hcCIsImEiOiJjazZrdGxoM2MwN2hsM2tsa3Z5d3p5bmV2In0.Gcr52REffgWCkccKC0UwFg'),
-    routeWhileDragging: true
+    routeWhileDragging: true,
+    geocoder : L.Control.Geocoder.nominatim(),
+    collapsed: false
+/*})
+    .on('routesfound', function(e) {
+        var routes = e.routes;
+        alert('Found ' + routes.length + ' route(s).');  */
 }).addTo(map);
 
 //adding marker to the map

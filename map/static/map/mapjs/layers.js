@@ -20,7 +20,7 @@ var BUKbound = L.geoJSON(bound).bindPopup(function (layer) { return layer.featur
 
 var Topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 	maxZoom: 17,
-	attribution: 'Map data: &copy; <a href="#">OpenStreetMap</a> contributors, <a href="#">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+	attribution: 'Map data: &copy; <a href="#">OpenStreetMap</a> contributors, <a href="#">WGST</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="#">CC-BY-SA</a>)'
 });
 var Esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 	attribution: '#'
